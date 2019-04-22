@@ -275,7 +275,7 @@ export default class Serviceappli extends Component{
               className='mt10'
               style={{float: 'right'}}
               onClick={this.handleNextStep}
-            >下一步</Button>
+            > 下一步 </Button>
           </Card>
         </div>
       </div>

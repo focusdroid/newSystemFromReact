@@ -16,6 +16,8 @@ import Servicereinburseapproval from './pages/services/servicereinburseapproval/
 import Servicesearchselfapply from './pages/servicesearch/servicesearchselfapply/Servicesearchselfapply' // 绿通申请综合查询
 import Servicesearchselfreim from './pages/servicesearch/servicesearchselfreim/Servicesearchselfreim' // 报销申请综合查询
 
+import ServiceappliDetail from './pages/services/serviceappli/ServiceappliDetail' // // 健康服务操作区 ---> 绿通服务申请 --> 详情信息
+
 
 export default class Router extends Component{
     render(){
@@ -30,6 +32,7 @@ export default class Router extends Component{
                                 <Switch>
                                     <Route path="/backlog/backlog" component={Backlog}></Route>
                                     <Route path="/serviceappli/serviceappli" component={Serviceappli}></Route>
+                                    <Route path="/serviceappli/serviceapplidetail" component={ServiceappliDetail}></Route>
                                     <Route path="/serviceappli/serviceappro/:id" component={Serviceappro}></Route>
                                     <Route path="/serviceappli/Servicediag" component={Servicediag}></Route>
                                     <Route path="/serviceappli/servicetrack" component={Servicetrack}></Route>

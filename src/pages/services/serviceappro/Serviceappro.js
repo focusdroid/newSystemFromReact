@@ -47,7 +47,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-
 // 方法执行的区间
 const mapDispatchToProps = (dispatch) => {
   return {

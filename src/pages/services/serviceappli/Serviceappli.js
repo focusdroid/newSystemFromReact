@@ -21,7 +21,7 @@ const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
-  render: text => <a href="javascript:;">{text}</a>,
+  render: text => <a href="javascript:;">{text}</a>
 }, {
   title: 'Age',
   dataIndex: 'age',

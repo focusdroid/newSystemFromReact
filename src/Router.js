@@ -33,7 +33,7 @@ export default class Router extends Component{
                                     <Route path="/backlog/backlog" component={Backlog}></Route>
                                     <Route path="/serviceappli/serviceappli" component={Serviceappli}></Route>
                                     <Route path="/serviceappli/serviceapplidetail" component={ServiceappliDetail}></Route>
-                                    <Route path="/serviceappli/serviceappro/:id" component={Serviceappro}></Route>
+                                    <Route path="/serviceappli/serviceappro" component={Serviceappro}></Route>
                                     <Route path="/serviceappli/Servicediag" component={Servicediag}></Route>
                                     <Route path="/serviceappli/servicetrack" component={Servicetrack}></Route>
                                     <Route path="/serviceappli/reimburseapp" component={Servicereimburseapp}></Route>

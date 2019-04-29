@@ -4,6 +4,9 @@ export default class Servicereimburseapp extends Component{
   render(){
     return (<Fragment>
       绿通服务报销申请{this.props.location.state.id}
+      <p>
+        以下设备
+      </p>
     </Fragment>);
   }
   componentDidMount() {

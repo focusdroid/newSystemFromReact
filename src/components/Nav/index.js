@@ -1,8 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import { NavLink } from 'react-router-dom'
 import meunConfig from '../../config/meunConfig'
-import { Menu } from 'antd';
+import {Layout, Menu, Icon } from 'antd';
 import './index.less'
+const {
+  Sider,
+} = Layout;
+// const SubMenu = Menu.SubMenu;
 const SubMenu = Menu.SubMenu;
 
 export default class Nav extends Component{
@@ -22,25 +26,23 @@ export default class Nav extends Component{
     return data.map((item, i) => {
       if (item.children) {
         return ( //
-          <SubMenu title={item.title} key={item.key}>
-            { this.randerMeun(item.children) }
-          </SubMenu>
+            <SubMenu title={<span><Icon type={item.icon} /><span>{item.title}</span></span>} key={item.key} >
+              { this.randerMeun(item.children) }
+            </SubMenu>
         )
       }
       return <Menu.Item key={item.key}>
-        <NavLink to={item.key}>{item.title}</NavLink>
+        <NavLink to={item.key}>
+          <span>{item.title}</span>
+        </NavLink>
       </Menu.Item>
     })
   }
   render(){
     return(<Fragment>
       <div className='nav-posit'>
-        <div className='nav-logo'>
-          <img src='/assets/logo-ant.svg' alt=""/>
-          <h1>Antd管理系统</h1>
-        </div>
         <div>
-          <Menu theme='dark'>
+          <Menu theme='dark' mode="inline">
             {this.state.MeunTreeNode}
           </Menu>
         </div>

@@ -127,11 +127,13 @@ const menuList = [
   {
     title: '待办事项',
     key: '/backlog',
+    icon: 'snippets',
     children: [{title: '待办事项', key: '/backlog/backlog'}]
   },
   {
     title: '健康服务操作区',
     key: '/serviceappli',
+    icon: 'user',
     children: [
       {title: '绿通服务申请', key: '/serviceappli/serviceappli'},
       {title: '绿通服务审批', key: '/serviceappli/serviceappro'},
@@ -144,6 +146,7 @@ const menuList = [
   {
     title: '健康服务查询区',
     key: '/searchselfapply',
+    icon: 'search',
     children: [
       {title: '绿通申请综合查询', key: '/searchselfapply/searchselfapply'},
       {title: '报销申请综合查询', key: '/searchselfapply/searchselfreim'}

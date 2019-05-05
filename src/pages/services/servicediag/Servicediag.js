@@ -9,7 +9,6 @@ const columns = [{
   dataIndex: 'name',
   key: 'name',
   align: 'center',
-  fixed: 'left',
   render: text => <div>
     <div>{text}</div>
     <div className='mt5 covers text-green'>查看明细</div>
@@ -96,7 +95,6 @@ const columns = [{
   title: 'Action',
   key: 'action',
   align: 'center',
-  fixed: 'right',
   render: (text, record) => (
     <span>
       <a href="javascript:;">Invite {record.name}</a>
@@ -190,7 +188,49 @@ export default class Servicediag extends Component{
         <section className='mt20'>
           <Card title='查询结果'>
             <Table
-              scroll={{ x: 1800, y: 300 }}
+              scroll={{ x: 1800}}
+              loading={false}
+              bordered
+              columns={columns}
+              dataSource={data}
+              pagination={false}
+            />
+          </Card>
+        </section>
+        {/*查询结果end*/}
+        {/*查询结果start*/}
+        <section className='mt20'>
+          <Card title='查询结果'>
+            <Table
+              scroll={{ x: 1800}}
+              loading={false}
+              bordered
+              columns={columns}
+              dataSource={data}
+              pagination={false}
+            />
+          </Card>
+        </section>
+        {/*查询结果end*/}
+        {/*查询结果start*/}
+        <section className='mt20'>
+          <Card title='查询结果'>
+            <Table
+              scroll={{ x: 1800}}
+              loading={false}
+              bordered
+              columns={columns}
+              dataSource={data}
+              pagination={false}
+            />
+          </Card>
+        </section>
+        {/*查询结果end*/}
+        {/*查询结果start*/}
+        <section className='mt20'>
+          <Card title='查询结果'>
+            <Table
+              scroll={{ x: 1800}}
               loading={false}
               bordered
               columns={columns}

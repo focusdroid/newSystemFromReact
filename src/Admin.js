@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Breadcrumb } from 'antd';
 import Nav from './components/Nav/index'
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 export default class Admin extends Component{
   constructor(props){

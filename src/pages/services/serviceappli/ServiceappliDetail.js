@@ -1,12 +1,7 @@
+// 使用redux做todolist功能
 import React, { Component, Fragment } from 'react'
 import { Input, Button, Card, Row, Col, List } from 'antd'
 import store from '../../../store/index'
-import {
-  CHANGE_INPUT_VALUE,
-  ADD_ITEM_VALUE,
-  DELETE_ITEM_VALUE
-} from '../../../store/actionType'
-
 import {
   getChangeValue,
   getAddValue,

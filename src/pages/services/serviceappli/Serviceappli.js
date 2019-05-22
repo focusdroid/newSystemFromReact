@@ -283,7 +283,7 @@ export default class Serviceappli extends Component{
   }
   handleNextStep () {
     if (this.state.nextStep) {
-      this.props.history.push({pathname: '/serviceappli/serviceapplidetail', state: {id: '00101', name: 'focusdroid'}})
+      this.props.history.push({pathname: '/serviceappli/serviceapplidetails', state: {id: '00101', name: 'focusdroid'}})
     } else {
       message.warning('不符合条件')
     }

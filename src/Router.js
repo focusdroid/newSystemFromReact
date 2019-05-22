@@ -8,6 +8,8 @@ import Admin from './Admin'
 
 import Backlog from './pages/backlog/backlog/Backlog' // 待办事项 ---> 待办事项
 import Serviceappli from './pages/services/serviceappli/Serviceappli' // 健康服务操作区 ---> 绿通服务申请
+import ServiceappliDetails from './pages/services/serviceappli/ServiceappliDetails'
+
 import Serviceappro from './pages/services/serviceappro/Serviceappro' // 健康服务操作区 ---> 绿通服务审批
 import Servicediag from './pages/services/servicediag/Servicediag' // 健康服务操作区 ---> 绿通服务分诊
 import Servicetrack from './pages/services/servicetrack/Servicetrack' // 健康服务操作区 ---> 绿通服务追踪
@@ -33,6 +35,7 @@ export default class Router extends Component{
                                     <Route path="/backlog/backlog" component={Backlog}></Route>
                                     <Route path="/serviceappli/serviceappli" component={Serviceappli}></Route>
                                     <Route path="/serviceappli/serviceapplidetail" component={ServiceappliDetail}></Route>
+                                    <Route path="/serviceappli/serviceapplidetails" component={ServiceappliDetails}></Route>
                                     <Route path="/serviceappli/serviceappro" component={Serviceappro}></Route>
                                     <Route path="/serviceappli/Servicediag" component={Servicediag}></Route>
                                     <Route path="/serviceappli/servicetrack" component={Servicetrack}></Route>

@@ -24,16 +24,18 @@ export default class Backlog extends Component{
               style={{marginBottom: '10px', cursor: 'pointer'}}
             >
               <div className='disflex jcsb'>
-                <p>绿通服务审批待办（使用Link，在Route中书写形参）</p>
-                <p>100</p>
+                <p>绿通服务审批待办</p>
+                {/*<p>绿通服务审批待办（使用Link，在Route中书写形参）</p>*/}
+                <p style={{fontSize: 26, color: 'orange', fontWeight: 600}}>10件</p>
               </div>
             </Card>
           </Link>
           <Link to={{pathname: '/serviceappli/servicetrack', state: {id: this.state.id}}}>
             <Card style={{marginBottom: '10px', cursor: 'pointer'}}>
               <div className='disflex jcsb'>
-                <p>绿通服务追踪待办（使用Link，使用state传递参数）</p>
-                <p>100</p>
+                <p>绿通服务追踪待办</p>
+                {/*<p>绿通服务追踪待办（使用Link，使用state传递参数）</p>*/}
+                <p style={{fontSize: 26, color: 'orange', fontWeight: 600}}>10件</p>
               </div>
             </Card>
           </Link>
@@ -42,27 +44,20 @@ export default class Backlog extends Component{
             onClick={this.useJSStateMode}
           >
             <div className='disflex jcsb'>
-              <p>绿通服务报销申请待办(使用state%js的跳转传参)</p>
-              <p>100</p>
+              <p>绿通服务报销申请待办</p>
+              {/*<p>绿通服务报销申请待办(使用state%js的跳转传参)</p>*/}
+              <p style={{fontSize: 26, color: 'orange', fontWeight: 600}}>10件</p>
             </div>
           </Card>
           <Link to={{pathname: '/serviceappli/reimburseapproval', query: {id: this.state.id}}}>
             <Card style={{marginBottom: '10px', cursor: 'pointer'}}>
               <div className='disflex jcsb'>
-                <p>绿通服务报销审批待办(使用query，&使用Link跳转)</p>
-                <p>100</p>
+                <p>绿通服务报销审批待办</p>
+                {/*<p>绿通服务报销审批待办(使用query，&使用Link跳转)</p>*/}
+                <p style={{fontSize: 26, color: 'orange', fontWeight: 600}}>10件</p>
               </div>
             </Card>
           </Link>
-          <Card
-            style={{marginBottom: '10px', cursor: 'pointer'}}
-            onClick={this.useQueryMode}
-          >
-            <div className='disflex jcsb'>
-              <p>绿通服务报销审批待办(使用query，JS 跳转的方式进行传参)</p>
-              <p>100</p>
-            </div>
-          </Card>
         </main>
       </div>
     </Fragment>);

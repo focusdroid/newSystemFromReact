@@ -1,12 +1,28 @@
 import React, { Component, Fragment } from 'react'
 import {
-  Card, Row, Col, Input, Select, Button, message, Radio
+  Card, Row, Col, Input, Select, Button, message, Radio, Upload, Icon
 } from 'antd'
 import '../../../style/common.less'
 import store from "../../../store";
 
 const Option = Select.Option;
 const RadioGroup = Radio.Group;
+const { TextArea } = Input;
+
+const props = {
+  action: '//jsonplaceholder.typicode.com/posts/',
+  listType: 'picture',
+  previewFile(file) {
+    console.log('Your upload file:', file);
+    // Your process logic. Here we just mock to the same file
+    return fetch('https://next.json-generator.com/api/json/get/4ytyBoLK8', {
+      method: 'POST',
+      body: file,
+    })
+      .then(res => res.json())
+      .then(({ thumbnail }) => thumbnail);
+  },
+};
 
 export default class ServiceappliDetails extends Component{
   constructor(props){
@@ -21,6 +37,12 @@ export default class ServiceappliDetails extends Component{
       getselectRadioValue: '1', // 服务申请内容
       addressRegion: '', // 就诊地区
       hospitalValue: '', // 就诊医院
+      departmentName: '', // 科室
+      cardNums: '', // 就诊卡号
+      medicalNum: '', // 医保卡号
+      medicalAddress: '', // 医保卡所在地
+      illnessName: '', // 疾病描述
+      Remarks: '', // 备注信息
     }
     this.state = store.getState()
     this.handlsStoreChange = this.handlsStoreChange.bind(this)
@@ -193,24 +215,162 @@ export default class ServiceappliDetails extends Component{
                 </Select>
               </div>
             </Col>
-            <Col xs={24} sm={24} md={24} lg={12} xl={8}>
-              {/*<div>
+            <Col xs={24} sm={24} md={24} lg={12} xl={8} className='mt20'>
+              <div>
                 <p>科室</p>
               </div>
               <div>
                 <Input
                   placeholder="科室"
-                  value={this.state.addressRegion}
+                  value={this.state.departmentName}
                   allowClear={true}
-                  onChange={this.getaddressRegion}
+                  onChange={this.getdepartmentName.bind(this)}
                 />
-              </div>*/}
+              </div>
             </Col>
-            <Col xs={24} sm={24} md={24} lg={12} xl={8}></Col>
+            <Col xs={24} sm={24} md={24} lg={12} xl={8}>
+              <div>
+                <p>就诊卡号</p>
+              </div>
+              <Input
+                placeholder="就诊卡号"
+                value={this.state.cardNums}
+                allowClear={true}
+                onChange={this.getcardNums.bind(this)}
+              />
+            </Col>
+            <Col xs={24} sm={24} md={24} lg={12} xl={8}>
+              <div>
+                <p>医保卡号</p>
+              </div>
+              <Input
+                placeholder="医保卡号"
+                value={this.state.medicalNum}
+                allowClear={true}
+                onChange={this.getmedicalNum.bind(this)}
+              />
+            </Col>
+            <Col xs={24} sm={24} md={24} lg={12} xl={8}>
+              <div>
+                <p>医保卡所在地</p>
+              </div>
+              <Input
+                placeholder="医保卡所在地"
+                value={this.state.medicalAddress}
+                allowClear={true}
+                onChange={this.getmedicalAddress.bind(this)}
+              />
+            </Col>
+            <Col  xs={24} sm={24} md={24} lg={24} xl={24} className='mt20'>
+              <div>
+                <p>疾病名称</p>
+              </div>
+              <Select defaultValue="lucy" style={{ width: '100%' }} onChange={this.getillnessName.bind(this)}>
+                <Option value="jack">Jack</Option>
+                <Option value="lucy">Lucy</Option>
+                <Option value="disabled" disabled>
+                  Disabled
+                </Option>
+                <Option value="Yiminghe">yiminghe</Option>
+              </Select>
+            </Col>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24} className='mt20'>
+              <div>
+                <p>备注信息</p>
+              </div>
+              <TextArea
+                rows={4}
+                value={this.state.Remarks}
+                onChange={this.getRemarks.bind(this)}/>
+            </Col>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24} className='mt20'>
+              <div>
+                <p>附件信息</p>
+              </div>
+            {/*  身份证件start*/}
+              <div className='disflex' style={{marginLeft: 20, marginTop: 30}}>
+                <div>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />身份证正面
+                    </Button>
+                  </Upload>
+                </div>
+                <div style={{marginLeft: 40}}>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />身份证反面
+                    </Button>
+                  </Upload>
+                </div>
+              </div>
+            {/*  身份证件end*/}
+            {/*  医保卡start*/}
+              <div className='disflex' style={{marginLeft: 20, marginTop: 30}}>
+                <div>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />医保卡附件1
+                    </Button>
+                  </Upload>
+                </div>
+                <div style={{marginLeft: 40}}>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />医保卡附件2
+                    </Button>
+                  </Upload>
+                </div>
+              </div>
+            {/*  医保卡end*/}
+            {/*就诊卡start*/}
+              <div className='disflex' style={{marginLeft: 20, marginTop: 30}}>
+                <div>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />就诊卡附件1
+                    </Button>
+                  </Upload>
+                </div>
+                <div style={{marginLeft: 40}}>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />就诊卡附件2
+                    </Button>
+                  </Upload>
+                </div>
+              </div>
+            {/*就诊卡end*/}
+            {/*病历start*/}
+              <div className='disflex' style={{marginLeft: 20, marginTop: 30}}>
+                <div>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />病历附件1
+                    </Button>
+                  </Upload>
+                </div>
+                <div style={{marginLeft: 40}}>
+                  <Upload {...props}>
+                    <Button>
+                      <Icon type="upload" />病历附件2
+                    </Button>
+                  </Upload>
+                </div>
+              </div>
+            {/*病历end*/}
+            </Col>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24} className='mt20 disflex jcsb'>
+              <div></div>
+              <div>
+                <Button style={{marginLeft: 10}} size='large' type='primary'>提交</Button>
+                <Button style={{marginLeft: 10}} size='large' type='dashed'>保存草稿</Button>
+                <Button style={{marginLeft: 10}} size='large' type='dashed' onClick={this.exitPage.bind(this)}>关闭</Button>
+              </div>
+            </Col>
           </Row>
         </Card>
         {/*  客户就诊信息end*/}
-
       </div>
     </Fragment>
     )
@@ -294,4 +454,53 @@ export default class ServiceappliDetails extends Component{
       console.log(this.state.hospitalValue)
     })
   }
+  getdepartmentName (e) { // 获取去科室信息
+    let value = e.target.value
+    this.setState(()=>({
+      departmentName: value
+    }))
+  }
+  getcardNums (e) { // 获取就诊卡号
+    let value = e.target.value
+    this.setState(() => ({
+      cardNums: value
+    }), () => {
+      console.log(this.state.cardNums)
+    })
+  }
+  getmedicalNum (e) { // 获取医保卡号
+    let value = e.target.value;
+    this.setState(() => ({
+      medicalNum: value
+    }), () => {
+      console.log(this.state.medicalNum)
+    })
+  }
+  getmedicalAddress (e) { // 医保卡所在地
+    let value = e.target.value;
+    this.setState(()=>({
+      medicalAddress: value
+    }), ()=>{
+      console.log(this.state.medicalAddress)
+    })
+  }
+  getillnessName (ele) { // 疾病名称
+    this.setState(()=>({
+      illnessName: ele
+    }), ()=>{
+      console.log(this.state.illnessName)
+    })
+  }
+  getRemarks (e) { // 备注信息
+    let value = e.target.value;
+    this.setState(()=>({
+      Remarks: value
+    }), ()=> {
+      console.log(this.state.Remarks)
+    })
+  }
+  exitPage () {
+    window.history.go(-1)
+  }
 }
+

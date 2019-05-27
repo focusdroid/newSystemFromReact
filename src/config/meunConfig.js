@@ -131,25 +131,25 @@ const menuList = [
     children: [{title: '待办事项', key: '/backlog/backlog'}]
   },
   {
-    title: '健康服务操作区',
+    title: '服务操作区',
     key: '/serviceappli',
     icon: 'user',
     children: [
-      {title: '绿通服务申请', key: '/serviceappli/serviceappli'},
-      {title: '绿通服务审批', key: '/serviceappli/serviceappro'},
-      {title: '绿通服务分诊', key: '/serviceappli/servicediag'},
-      {title: '绿通服务追踪', key: '/serviceappli/servicetrack'},
-      {title: '绿通服务报销申请', key: '/serviceappli/reimburseapp'},
-      {title: '绿通服务报销审批', key: '/serviceappli/reimburseapproval'},
+      {title: '服务申请', key: '/serviceappli/serviceappli'},
+      {title: '服务审批', key: '/serviceappli/serviceappro'},
+      {title: '服务分诊', key: '/serviceappli/servicediag'},
+      {title: '服务追踪', key: '/serviceappli/servicetrack'},
+      {title: '服务报销申请', key: '/serviceappli/reimburseapp'},
+      {title: '服务报销审批', key: '/serviceappli/reimburseapproval'},
     ]
   },
   {
-    title: '健康服务查询区',
+    title: '服务查询区',
     key: '/searchselfapply',
     icon: 'search',
     children: [
-      {title: '绿通申请综合查询', key: '/searchselfapply/searchselfapply'},
-      {title: '报销申请综合查询', key: '/searchselfapply/searchselfreim'}
+      {title: '申请综合查询', key: '/searchselfapply/searchselfapply'},
+      {title: '申请综合查询', key: '/searchselfapply/searchselfreim'}
     ]
   }
 ]

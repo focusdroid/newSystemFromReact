@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Card, Row, Col, Input, Select, DatePicker, Table, Divider, Tag } from 'antd'
+import { Card, Row, Col, Input, Select, DatePicker, Table, Divider, Tag, Button } from 'antd'
 
 const Option = Select.Option;
 const { RangePicker } = DatePicker;
@@ -8,6 +8,7 @@ const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
+  width: 150,
   align: 'center',
   render: text => <div>
     <div>{text}</div>
@@ -20,26 +21,31 @@ const columns = [{
   dataIndex: 'age',
   key: 'age',
   align: 'center',
+  width: 100,
 }, {
   title: 'Age',
   dataIndex: 'age',
   key: 'age',
   align: 'center',
+  width: 100,
 }, {
   title: 'Age',
   dataIndex: 'age',
   key: 'age',
   align: 'center',
+  width: 100,
 }, {
   title: 'Age',
   dataIndex: 'age',
   key: 'age',
   align: 'center',
+  width: 100,
 }, {
   title: 'Age',
   dataIndex: 'age',
   key: 'age',
   align: 'center',
+  width: 100,
 }, {
   title: 'Address',
   dataIndex: 'address',
@@ -102,7 +108,8 @@ const columns = [{
       <a href="javascript:;">Delete</a>
     </span>
   ),
-}];
+}
+];
 
 const data = [{
   key: '1',
@@ -180,52 +187,14 @@ export default class Servicediag extends Component{
                   <p className="mb5">申请日期</p>
                   <RangePicker onChange={this.onChange} />
                 </Col>
+                <Col xs={24} sm={6} md={6} lg={6} xl={6} xxl={6} className='mt25'>
+                  <Button type='primary'>查询</Button>
+                  <Button className='ml10'>重置</Button>
+                </Col>
               </Row>
             </div>
           </Card>
         </div>
-        {/*查询结果start*/}
-        <section className='mt20'>
-          <Card title='查询结果'>
-            <Table
-              scroll={{ x: 1800}}
-              loading={false}
-              bordered
-              columns={columns}
-              dataSource={data}
-              pagination={false}
-            />
-          </Card>
-        </section>
-        {/*查询结果end*/}
-        {/*查询结果start*/}
-        <section className='mt20'>
-          <Card title='查询结果'>
-            <Table
-              scroll={{ x: 1800}}
-              loading={false}
-              bordered
-              columns={columns}
-              dataSource={data}
-              pagination={false}
-            />
-          </Card>
-        </section>
-        {/*查询结果end*/}
-        {/*查询结果start*/}
-        <section className='mt20'>
-          <Card title='查询结果'>
-            <Table
-              scroll={{ x: 1800}}
-              loading={false}
-              bordered
-              columns={columns}
-              dataSource={data}
-              pagination={false}
-            />
-          </Card>
-        </section>
-        {/*查询结果end*/}
         {/*查询结果start*/}
         <section className='mt20'>
           <Card title='查询结果'>

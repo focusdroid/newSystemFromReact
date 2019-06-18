@@ -136,7 +136,7 @@ const menuList = [
     icon: 'user',
     children: [
       {title: '服务申请', key: '/serviceappli/serviceappli'},
-      {title: '服务审批', key: '/serviceappli/serviceappro'},
+      {title: '服务审批', key: '/serviceappli/serviceappros'},
       {title: '服务分诊', key: '/serviceappli/servicediag'},
       {title: '服务追踪', key: '/serviceappli/servicetrack'},
       {title: '服务报销申请', key: '/serviceappli/reimburseapp'},

@@ -26,7 +26,7 @@ export default class Router extends Component{
         return(
             <BrowserRouter>
                 <App>
-                    <Switch>
+                  <Switch>
                         <Route path='/login' component={Login}></Route>
                         <Route path='/register' component={Register}></Route>
                         <Route render={() =>
@@ -51,7 +51,7 @@ export default class Router extends Component{
                         }>
                         </Route>
                         <Route component={Error}></Route>
-                    </Switch>
+                  </Switch>
                 </App>
             </BrowserRouter>
         );

@@ -42,12 +42,12 @@ export default class Admin extends Component{
             </Menu>*/}
             <div style={{color: '#fff', display: 'flex', justifyContent: 'space-between'}}>
               <div>
-                <p>THM绿通服务支持系统</p>
+                <p>用户访问数据可视化系统</p>
               </div>
               <div>
                 <div>
-                  <span>机构：集团总部</span>
-                  <span>&nbsp;&nbsp;&nbsp;&nbsp;退出登录</span>
+                  <span>实时数据监控系统</span>
+                  {/*<span>&nbsp;&nbsp;&nbsp;&nbsp;退出登录</span>*/}
                 </div>
                 {/*<div>
                   <p>当前用户：gcmuser</p>

@@ -131,15 +131,15 @@ const menuList = [
     children: [{title: '待办事项', key: '/backlog/backlog'}]
   },
   {
-    title: '服务操作区',
+    title: '数据可视化',
     key: '/serviceappli',
     icon: 'user',
     children: [
       {title: '服务申请', key: '/serviceappli/serviceappli'},
       {title: '服务审批', key: '/serviceappli/serviceappros'},
       {title: '服务分诊', key: '/serviceappli/servicediag'},
-      {title: '服务追踪', key: '/serviceappli/servicetrack'},
-      {title: '服务报销申请', key: '/serviceappli/reimburseapp'},
+      {title: '实时访问数据', key: '/serviceappli/servicetrack'},
+      {title: '豆瓣电影实时数据', key: '/serviceappli/reimburseapp'},
       {title: '服务报销审批', key: '/serviceappli/reimburseapproval'},
     ]
   },

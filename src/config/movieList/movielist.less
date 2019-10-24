@@ -1,0 +1,38 @@
+ul {
+  list-style: none;
+}
+#loading{
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+.movie-list {
+  width: 100%;
+  .movie-ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+    li {
+      margin-top: 20px;
+      .movie-box {
+        width: 210px;
+        .list-top {
+          img {
+            height: 240px;
+            width: 100%;
+          }
+        }
+        .list-bottom {
+          .casts {
+            width: 17%
+          }
+          .casts-name {
+            width: 83%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -103,9 +103,9 @@ const columns = [{
   align: 'center',
   render: (text, record) => (
     <span>
-      <a href="javascript:;">Invite {record.name}</a>
+      <a href="javascript:void(0)">Invite {record.name}</a>
       <Divider type="vertical" />
-      <a href="javascript:;">Delete</a>
+      <a href="javascript:void(0)">Delete</a>
     </span>
   ),
 }
@@ -137,9 +137,9 @@ export default class Servicediag extends Component{
     super(props);
     this.setState = {}
     this.handleChange = this.handleChange.bind(this)
-    this.onChange = this.onChange.bind(this)
+    this.onHandleChange = this.onHandleChange.bind(this)
   }
-  onChange(date, dateString) {
+  onHandleChange(date, dateString) {
     console.log(date, dateString);
   }
   render(){
@@ -185,7 +185,7 @@ export default class Servicediag extends Component{
                 </Col>
                 <Col xs={24} sm={6} md={6} lg={6} xl={6} xxl={6}>
                   <p className="mb5">申请日期</p>
-                  <RangePicker onChange={this.onChange} />
+                  <RangePicker onChange={this.onHandleChange} />
                 </Col>
                 <Col xs={24} sm={6} md={6} lg={6} xl={6} xxl={6} className='mt25'>
                   <Button type='primary'>查询</Button>
@@ -214,8 +214,5 @@ export default class Servicediag extends Component{
   }
   handleChange(value) {
     console.log(`selected ${value}`);
-  }
-  onChange(date, dateString) {
-    console.log(date, dateString);
   }
 }

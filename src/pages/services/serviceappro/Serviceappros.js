@@ -20,8 +20,8 @@ const dataSource = [
     CardNum: 'cfq3rtqrtqr8881',
     createTime: '2019-06-18 20:59:59',
     authorization: 'focusdroid',
-  },
-];
+  }
+]
 
 const columns = [
   {
@@ -43,30 +43,30 @@ const columns = [
     dataIndex: 'address',
     key: 'address',
     width: 170,
-    align: 'center',
+    align: 'center'
   },
   {
     title: '证券号',
     dataIndex: 'CardNum',
     key: 'CardNum',
     width: 70,
-    align: 'center',
+    align: 'center'
   },
   {
     title: '创建时间',
     dataIndex: 'createTime',
     key: 'createTime',
     width: 170,
-    align: 'center',
+    align: 'center'
   },
   {
     title: '授权人',
     dataIndex: 'authorization',
     key: 'authorization',
     width: 170,
-    align: 'center',
-  },
-];
+    align: 'center'
+  }
+]
 
 
 
@@ -130,7 +130,7 @@ export default class Serviceappros extends Component{
                   value={this.state.Certificate}
                   placeholder="就诊人证件号"
                   allowClear={true}
-                  onChange={this.getCertificate .bind(this)}
+                  onChange={this.getCertificate.bind(this)}
                 />
               </Col>
               <Col xs={24} sm={24} md={24} lg={12} xl={8}>

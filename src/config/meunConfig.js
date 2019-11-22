@@ -128,28 +128,31 @@ const menuList = [
     title: '待办事项',
     key: '/backlog',
     icon: 'snippets',
-    children: [{title: '待办事项', key: '/backlog/backlog'}]
+    id: 1,
+    children: [{title: '待办事项', parentId: 1, id: 101, key: '/backlog/backlog'}]
   },
   {
     title: '数据可视化',
     key: '/serviceappli',
     icon: 'user',
+    id: 2,
     children: [
-      {title: '服务申请', key: '/serviceappli/serviceappli'},
-      {title: '服务审批', key: '/serviceappli/serviceappros'},
-      {title: '服务分诊', key: '/serviceappli/servicediag'},
-      {title: '实时访问数据', key: '/serviceappli/servicetrack'},
-      {title: '豆瓣电影实时数据', key: '/serviceappli/reimburseapp'},
-      {title: '服务报销审批', key: '/serviceappli/reimburseapproval'},
+      {title: '服务申请', parentId: 2, id: 201, key: '/serviceappli/serviceappli'},
+      {title: '服务审批', parentId: 2, id: 202, key: '/serviceappli/serviceappros'},
+      {title: '服务分诊', parentId: 2, id: 203, key: '/serviceappli/servicediag'},
+      {title: '实时访问数据', parentId: 2, id: 204, key: '/serviceappli/servicetrack'},
+      {title: '豆瓣电影实时数据', parentId: 2, id: 205, key: '/serviceappli/reimburseapp'},
+      {title: '服务报销审批', parentId: 2, id: 206, key: '/serviceappli/reimburseapproval'},
     ]
   },
   {
     title: '服务查询区',
     key: '/searchselfapply',
     icon: 'search',
+    id: 3,
     children: [
-      {title: '申请综合查询', key: '/searchselfapply/searchselfapply'},
-      {title: '申请综合查询', key: '/searchselfapply/searchselfreim'}
+      {title: '申请综合查询', parentId: 3, id: 301, key: '/searchselfapply/searchselfapply'},
+      {title: '申请综合查询', parentId: 3, id: 302, key: '/searchselfapply/searchselfreim'}
     ]
   }
 ]

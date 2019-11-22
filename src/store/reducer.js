@@ -2,7 +2,9 @@ import { message } from 'antd'
 import {
   CHANGE_INPUT_VALUE,
   ADD_ITEM_VALUE,
-  DELETE_ITEM_VALUE
+  DELETE_ITEM_VALUE,
+  SETDEFAULTSELECTEDKEYS,
+  SETMENUTREENODE
 } from './actionType'
 
 const defaultState = {
@@ -30,7 +32,9 @@ const defaultState = {
     {id: '014', label: '北京第5医院'},
     {id: '015', label: '北京第6医院'},
     {id: '016', label: '北京第7医院'}
-  ]
+  ],
+  defaultSelectedKeys: localStorage.SelectedKeys || '101', // 默认第一个菜单下面的第一条数据
+  defaultOpenKeys: localStorage.OpenKeys || '1', // 默认第一个父菜单下面的第一条数据
 }
 
 export default (state = defaultState, action) => {
@@ -51,6 +55,13 @@ export default (state = defaultState, action) => {
   } else if (action.type === DELETE_ITEM_VALUE) {
     const newState = JSON.parse(JSON.stringify(state))
     newState.dataList.splice(action.i, 1)
+    return newState
+  } else if (action.type === SETDEFAULTSELECTEDKEYS) {
+    const newState = JSON.parse(JSON.stringify(state))
+    newState.defaultSelectedKeys = String(action.obj.id)
+    newState.defaultOpenKeys = String(action.obj.parentId)
+    localStorage.SelectedKeys = String(action.obj.id) // 在本地先存储一份
+    localStorage.OpenKeys = String(action.obj.parentId) // 在本地先存储一份
     return newState
   }
   return state

@@ -13,7 +13,6 @@ export default class Servicesearchselfapply extends Component{
     </Fragment>);
   }
   componentDidMount () {
-    console.log(this.props.location.query === undefined )
     if (this.props.location.query === undefined) {
       this.setState(() => ({
         getId: 'query参数丢失,没有获取到参数'

@@ -3,7 +3,7 @@ import { Spin, Alert } from 'antd';
 import { Pagination } from 'antd';
 import './movielist.less'
 import '../../style/common.less'
-
+import { withRouter } from 'react-router-dom';
 
 class MovieList extends Component {
   constructor (props) {
@@ -19,10 +19,10 @@ class MovieList extends Component {
         <div className='movie-title'>{this.props.data.title}</div>
         <div className='movie-list'>
           <ul className='movie-ul'>
-            {JSON.stringify(this.state.list) != "{}" ?
+            {JSON.stringify(this.state.list) !== "{}" ?
             this.state.list.data.subjects.map((item) => {
               return <li key={item.id}>
-                <div className='movie-box'>
+                <div className='movie-box'  onClick={this.openMovieDetail.bind(this, item.id)}>
                   <div className='list-top'>
                     <img src={item.images.large} alt=""/>
                   </div>
@@ -77,7 +77,7 @@ class MovieList extends Component {
       {/*  分页start*/}
         <div style={{display: 'flex', justifyContent: 'flex-end', margin: 30}}>
           <div>{this.state.total}</div>
-          <div style={{display: JSON.stringify(this.state.list) == "{}" ? 'none' : 'block'}}>
+          <div style={{display: JSON.stringify(this.state.list) === "{}" ? 'none' : 'block'}}>
             <Pagination onChange={this.showTotal} size="small" total={this.state.total} showSizeChanger showQuickJumper />
           </div>
         </div>
@@ -86,7 +86,7 @@ class MovieList extends Component {
     </Fragment>);
   }
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    if (this.props != nextProps) {
+    if (this.props !== nextProps) {
       this.setState(() => ({
         list: nextProps,
         total: nextProps.data.total
@@ -99,6 +99,10 @@ class MovieList extends Component {
   }
   showTotal = (total) => {
     console.log(total)
+  }
+  openMovieDetail (id) {
+    console.log(this.props.history)
+    this.props.history.push({pathname: '/serviceappli/moviedetail', state: {id: id}})
   }
 }
 
@@ -118,4 +122,4 @@ function Loading () {
   </Fragment>);
 }
 
-export default MovieList;
+export default withRouter(MovieList);

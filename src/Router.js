@@ -18,7 +18,8 @@ import Servicereinburseapproval from './pages/services/servicereinburseapproval/
 import Servicesearchselfapply from './pages/servicesearch/servicesearchselfapply/Servicesearchselfapply' // 绿通申请综合查询
 import Servicesearchselfreim from './pages/servicesearch/servicesearchselfreim/Servicesearchselfreim' // 报销申请综合查询
 
-import ServiceappliDetail from './pages/services/serviceappli/ServiceappliDetail' // // 健康服务操作区 ---> 绿通服务申请 --> 详情信息
+import ServiceappliDetail from './pages/services/serviceappli/ServiceappliDetail'
+import MoviedDetail from "./config/movieList/MovieDetail"; // 健康服务操作区 ---> 绿通服务申请 --> 详情信息
 
 
 export default class Router extends Component{
@@ -44,6 +45,7 @@ export default class Router extends Component{
                                     <Route path="/serviceappli/reimburseapproval" component={Servicereinburseapproval}></Route>
                                     <Route path="/searchselfapply/searchselfapply" component={Servicesearchselfapply}></Route>
                                     <Route path="/searchselfapply/searchselfreim" component={Servicesearchselfreim}></Route>
+                                    <Route path="/serviceappli/moviedetail" component={MoviedDetail}></Route>
                                     <Route component={Error}></Route>
                                     <Redirect to='/' />
                                 </Switch>

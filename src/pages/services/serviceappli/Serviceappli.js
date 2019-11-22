@@ -21,7 +21,7 @@ const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
-  render: text => <a href="javascript:;">{text}</a>
+  render: text => <a href="#">{text}</a>
 }, {
   title: 'Age',
   dataIndex: 'age',
@@ -50,9 +50,9 @@ const columns = [{
   key: 'action',
   render: (text, record) => (
     <span>
-      <a href="javascript:;">Invite {record.name}</a>
+      <a href="#">Invite {record.name}</a>
       <Divider type="vertical" />
-      <a href="javascript:;">Delete</a>
+      <a href="#">Delete</a>
     </span>
   ),
 }];
